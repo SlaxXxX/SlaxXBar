@@ -1,0 +1,14 @@
+name: "${artifactId}"
+version: ${version}
+main: ${basePackage}.${mainClass}
+
+description: "${project.description}"
+author: 'SlaxX_X'
+website: "${project.url}"
+
+commands:
+  slaxxbar:
+    description: 'todo'
+    usage: /<command>
+    permission: slaxxbar.slaxxbar
+    aliases: [sb]
