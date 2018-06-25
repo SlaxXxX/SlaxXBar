@@ -1,0 +1,89 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.minetropolis</groupId>
+	<artifactId>SlaxXBar</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+
+
+	<name>SlaxXBar</name>
+	<description>Custom Sidebars for Scoreboard Teams</description>
+	<url>http://www.minetropolis.de/pandora/</url>
+
+	<developers>
+		<developer>
+			<id>SlaxX_X</id>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<basePackage>de.minetropolis.minecraft</basePackage>
+		<mainClass>CommandCorrector</mainClass>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
+			<version>1.12.1-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit5-engine</artifactId>
+			<version>5.0.0-ALPHA</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- Build an executable JAR -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>de.minetropolis.TODO</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+		<defaultGoal>install</defaultGoal>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<targetPath>.</targetPath>
+				<filtering>false</filtering>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<targetPath>.</targetPath>
+				<filtering>true</filtering>
+				<includes>
+					<include>*.yml</include>
+					<include>*.properties</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+</project>
